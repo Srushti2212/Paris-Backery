@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paries Bakery – Custom Cakes & Desserts</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Load EmailJS (must be before script.js runs) -->
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Paries Bakery</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#custom">Custom Cakes</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Request a Cake</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span>Your Vision, Our Delicious Creation</span>
+        <span>Baking Dreams into Reality</span>
+      </h1>
+      <p class="hero-subtitle">
+        At Paries Bakery, we turn your ideas into elegant, custom‑made cakes and desserts.
+      </p>
+      <button class="btn-primary" onclick="scrollToSection('custom')">
+        Design Your Cake
+      </button>
+    </div>
+  </section>
+
+  <section id="custom" class="custom">
+    <h2 class="section-title">Custom Flavors, Unique Designs</h2>
+    <p class="section-text">
+      Whether it’s a birthday, wedding, or anniversary, tell us your theme and we’ll bake it to perfection.
+    </p>
+    <div class="features">
+      <div class="feature">
+        <h3>Personalized Consultation</h3>
+        <p>Share your vision and we’ll design the perfect cake.</p>
+      </div>
+      <div class="feature">
+        <h3>Flavor Customization</h3>
+        <p>Choose base flavors, fillings, and frostings to match your taste.</p>
+      </div>
+      <div class="feature">
+        <h3>Artistic Details</h3>
+        <p>Fondant figurines, hand‑piped designs, and themed decorations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2 class="section-title">Elegance in Every Delicious Tier</h2>
+    <div class="cake-grid">
+      <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-160056521548774-2b333f92f9f4')"></div>
+      <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-1603102574526-5f5e0c42db96')"></div>
+      <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-1609505848774-2b333f92f9f4')"></div>
+      <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-1606711666266-3f9ae6ce93eb')"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Send Your Cake Request</h2>
+    <p class="section-text">
+      Fill the form below with your event details and we’ll get back to you with a quote and design.
+    </p>
+    <form id="cakeRequestForm" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Your Phone (optional)" />
+      <input type="date" name="eventDate" placeholder="Event Date" required />
+
+      <select name="cakeType" required>
+        <option value="" disabled selected>Cake Type</option>
+        <option value="Birthday">Birthday Cake</option>
+        <option value="Wedding">Wedding Cake</option>
+        <option value="Anniversary">Anniversary Cake</option>
+        <option value="Baby_Shower">Baby Shower Cake</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <div class="form-row">
+        <div class="form-col">
+          <label>Flavors (up to 3)</label>
+          <input type="text" name="flavor1" placeholder="Flavor 1 (e.g., Chocolate)" />
+          <input type="text" name="flavor2" placeholder="Flavor 2 (e.g., Vanilla)" />
+          <input type="text" name="flavor3" placeholder="Flavor 3 (e.g., Butterscotch)" />
+        </div>
+        <div class="form-col">
+          <label>Frosting</label>
+          <select name="frosting">
+            <option value="Buttercream">Buttercream</option>
+            <option value="Cream_Cheese">Cream Cheese</option>
+            <option value="Ganache">Ganache</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Tier Count (1–5)</label>
+      <select name="tiers" required>
+        <option value="1">1 Tier</option>
+        <option value="2">2 Tiers</option>
+        <option value="3">3 Tiers</option>
+        <option value="4">4 Tiers</option>
+        <option value="5">5 Tiers</option>
+      </select>
+
+      <label>Theme / Colors</label>
+      <textarea name="theme" placeholder="Describe your theme (colors, characters, patterns, etc.)"></textarea>
+
+      <label>Budget Range (Optional)</label>
+      <select name="budget">
+        <option value="0">Under ₹1,000</option>
+        <option value="1000">₹1,000 – ₹2,500</option>
+        <option value="2500">₹2,500 – ₹5,000</option>
+        <option value="5000">₹5,000 – ₹10,000</option>
+        <option value="10000">Above ₹10,000</option>
+      </select>
+
+      <label>Additional Notes</label>
+      <textarea name="notes" placeholder="Any special requirements or messages?"></textarea>
+
+      <button type="submit" class="btn-primary">Send Request</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>Paries Bakery</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
